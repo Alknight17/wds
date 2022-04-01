@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-eclass="textarea"uiv="X-UA-Compatible" content="ie=edge" />
     <link
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,7 +18,7 @@
       href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap"
       rel="stylesheet"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="./assets/css/style.css" />
     <title>Work Day Scheduler</title>
   </head>
 
@@ -26,62 +26,63 @@
     <header class="jumbotron">
       <h1 class="display-3">Work Day Scheduler</h1>
       <p class="lead">A simple calendar app for scheduling your work day</p>
+      <!-- link javascript to find current day/time-->
       <p id="currentDay" class="lead"></p>
     </header>
     
     <!-- container for time blocks -->
     <div class="container">
 
-      <div class="row time-block hour" id="9am">9AM
-        <textarea class="description" id="textarea-9">
+      <div class="row" id="9am">9AM  
+        <textarea class="textarea" id="textarea-9">
 
       </textarea>
       </div>
 
-      <div class="row time-block hour" id="10am">10AM
-        <textarea id="textarea-10">
+      <div class="row" id="10am">10AM 
+        <textarea class="textarea" id="textarea-10">
 
         </textarea>
       </div>
 
-      <div class="row time-block hour" id="11am">11AM
-        <textarea id="textarea-11">
+      <div class="row" id="11am">11AM 
+        <textarea class="textarea" id="textarea-11">
 
         </textarea>
       </div>
 
-      <div class="row time-block hour" id="12pm">12PM
-        <textarea id="textarea-12">
+      <div class="row" id="12pm">12PM 
+        <textarea class="textarea" id="textarea-12">
 
         </textarea>
       </div>
 
-      <div class="row time-block hour" id="1pm">1PM
-        <textarea id="textarea-1">
+      <div class="row" id="1pm">1PM  
+        <textarea class="textarea" id="textarea-1">
 
         </textarea>
       </div>
 
-      <div class="row time-block hour" id="2pm">2PM
-        <textarea id="textarea-2">
+      <div class="row" id="2pm">2PM  
+        <textarea class="textarea" id="textarea-2">
 
         </textarea>
       </div>
 
-      <div class="row time-block hour" id="3pm">3PM
-        <textarea id="textarea-3">
+      <div class="row" id="3pm">3PM  
+        <textarea class="textarea" id="textarea-3">
 
         </textarea>
       </div>
 
-      <div class="row time-block hour" id="4pm">4PM
-        <textarea id="textarea-4">
+      <div class="row" id="4pm">4PM  
+        <textarea class="textarea" id="textarea-4">
 
         </textarea>
       </div>
 
-      <div class="row time-block hour" id="5pm">5PM
-        <textarea id="textarea-5">
+      <div class="row" id="5pm">5PM  
+        <textarea class="textarea" id="textarea-5">
 
         </textarea>
       </div>
@@ -90,5 +91,6 @@
 
     <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="./assets/js/script.js"></script>
   </body>
 </html>
