@@ -1,7 +1,26 @@
-// find current day/time
+// find current day/month/year
 var timeDisplayEl = document.querySelector("#time-display");
 timeDisplayEl.textContent = moment().format("dddd MMMM Mo YYYY");
 
-// assign the correct time vlue to each time block
-// add or remove classes based on past/present/future
-// add a save button that saves text in each block
+// global variable for current hour
+var now = moment();
+var currentHour = now.hour();
+console.log(currentHour);
+
+// variable for check time, split id string
+var checkHour = function() {
+    $(".row").each(function() {
+      var id = $(this).attr('id');
+      var splitId =  id.split("-");
+      var elementHour = parseInt(splitId[1]);
+
+      if (elementHour < currentHour ) {
+
+      } else if (elementHour === currentHour) {
+
+      } else if (elementHour > currentHour) {
+
+      }
+    });
+}
+
