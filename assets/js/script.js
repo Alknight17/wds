@@ -2,41 +2,50 @@
 var timeDisplayEl = document.querySelector("#time-display");
 timeDisplayEl.textContent = moment().format("dddd MMMM Mo YYYY");
 
-// variable to selecting each timeblock and add classes 
-var timeBlock = document.getElementById('textarea');
+// save tasks to local storage upon clicking save icon
+$(document).ready(function () { 
+  $('.saveBtn').on('click', function () {
+    var tasks = $(this).siblings(".textarea").val();
+    var time = $(this).parent().attr('id');
 
-// save tasks to local storage
-const saveBtn = document.querySelector('#save');
-const getTask = document.querySelector('.textarea');
+    // save tasks
+    localStorage.setItem(time, tasks);
+  })
 
-saveBtn.addEventListener('click', function () {
-  localStorage.setItem('task', getTask.value);
+  function timeBlocks() {
+    // get current hour
+    var currentHour = moment().hour();
+
+    // check each time block and reference to current hour
+    $(".time-block").each(function () {
+      // split id so that hour in timeblock can be used as numerical value
+      var timeSplit = parseInt($(this).attr("id").split("-")[1]);
+
+      // timeblock is in the past
+      if (timeSplit < currentHour) {
+        $(this).removeClass("present");
+        $(this).removeClass("future");
+        $(this).addClass("past");
+
+      // timeblock is in the present  
+      } else if (timeSplit === currentHour) {
+        $(this).removeClass("past");
+        $(this).removeClass("future");
+        $(this).addClass("present");
+        
+      // timeblock is in the future  
+      } else {
+        $(this).removeClass("past");
+        $(this).removeClass("present");
+        $(this).addClass("future");
+      }
+    })
+  }
+
+
+// call main function for timeblocks 
+timeBlocks();
+
 });
 
-// global variable for current hour
-var now = moment();
-var currentHour = now.hour();
-console.log(currentHour);
-
-// variable for check time, split id string
-var checkHour = function() {
-    $(".row").each(function() {
-      var id = $(this).attr('id');
-      var splitId =  id.split("-");
-      var elementHour = parseInt(splitId[1]);
-      console.log(elementHour);
-      
-      if (currentHour > elementHour) {
-        timeBlock.classList.add("past");
-      
-      } else if (currentHour === elementHour) {
-        timeBlock.classList.add("present");
-      
-      } else if (currentHour < elementHour) {
-        timeBlock.classList.add("future");
-      }
-    });
-}
-
-checkHour();
 
